@@ -4,6 +4,8 @@ Specifically, the project aims to find if an individual's working department has
 and if the differing of work wage is large.
 
 The project currently contains R code that analyze the dataset.
+Due to the enlarging size of dataset, R automatically omitts about 13000 datapoints when reading the csv file.
+The current csv version of the wage dataset being used has all data up to 11/27/2025
 
 the dataset comes from the official Seattle government dataset website, with the wage dataset updated regularly.
 https://data.seattle.gov/City-Administration/City-of-Seattle-Wage-Data/2khk-5ukd/about_data
