@@ -15,5 +15,5 @@ I do not own the rights to any of the datasets used in this project; the dataset
 
 For more information please visit the official website:
 https://data.seattle.gov/City-Administration/City-of-Seattle-Wage-Data/2khk-5ukd/about_data
-
+(if the link doesn't work and guides to 403 forbidden, try refreshing the page)
 
