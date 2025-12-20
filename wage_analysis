@@ -1,0 +1,34 @@
+import pandas as pd
+import geopandas as gpd
+# import matplotlib.byplot as plt
+
+test_data_path = 'wage_analysis/test_wage_data.csv'
+
+
+def print_data(data: pd.DataFrame) -> None:
+    """
+    given a dataframe, prints out the first few rows of data.
+    """
+    print(data.head())
+
+
+def filter_data(data: pd.DataFrame) -> pd.DataFrame:
+    """
+    given a dataframe, the function filter_data filters
+    the wage dataset, and return the filtered dataset.
+    """
+
+    filtered_df = data.loc[:, ['Department', 'Hourly Rate']]
+    return filtered_df
+
+
+def main():
+    test_data = pd.read_csv(test_data_path)
+    filtered_df = filter_data(test_data)
+
+
+
+
+
+if __name__ == "__main__":
+    main()
