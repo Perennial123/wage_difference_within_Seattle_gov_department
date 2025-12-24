@@ -1,9 +1,9 @@
 import pandas as pd
 import geopandas as gpd
-# import matplotlib.byplot as plt
+import matplotlib.pyplot as plt
 
-test_data_path = 'wage_analysis/test_wage_data.csv'
-seattle_map_path = 
+test_data_path = 'test_wage_data.csv'
+seattle_map_path = 'Seattle_Area_Polygon\Seattle_Area_Poly.shp'
 
 
 def print_data(data: pd.DataFrame) -> None:
@@ -22,15 +22,26 @@ def filter_data(data: pd.DataFrame) -> pd.DataFrame:
     filtered_df = data.loc[:, ['Department', 'Hourly Rate']]
     return filtered_df
 
+# the map_construction function is purely for generating a seattle map
+# to better introduce Seattle; gonna use this map for slides/presentation
 def map_construction(seattle_map: gpd.GeoDataFrame) -> None:
-    pass
+    """
+    given a gpd.geodataframe object, generate a map and save as
+    Seattle_map.png. Returns nothing
+    """
+    seattle_geom = seattle_map[['geometry']]
+    seattle_geom = seattle_geom.to_crs('EPSG:4326')
+
+    fig, ax = plt.subplots(1, figsize=(10, 10))
+    seattle_geom.plot(ax=ax, color='#CACACA')
+    fig.savefig('Seattle_map.png')
 
 
 def main():
     test_data = pd.read_csv(test_data_path)
     filtered_df = filter_data(test_data)
-
-
+    seattle_map = gpd.read_file(seattle_map_path)
+    map_construction(seattle_map)
 
 
 
