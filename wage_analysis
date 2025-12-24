@@ -3,6 +3,7 @@ import geopandas as gpd
 # import matplotlib.byplot as plt
 
 test_data_path = 'wage_analysis/test_wage_data.csv'
+seattle_map_path = 
 
 
 def print_data(data: pd.DataFrame) -> None:
@@ -20,6 +21,9 @@ def filter_data(data: pd.DataFrame) -> pd.DataFrame:
 
     filtered_df = data.loc[:, ['Department', 'Hourly Rate']]
     return filtered_df
+
+def map_construction(seattle_map: gpd.GeoDataFrame) -> None:
+    pass
 
 
 def main():
