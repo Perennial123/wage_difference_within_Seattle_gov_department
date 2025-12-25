@@ -22,6 +22,11 @@ def filter_data(data: pd.DataFrame) -> pd.DataFrame:
     filtered_df = data.loc[:, ['Department', 'Hourly Rate']]
     return filtered_df
 
+# def unique_departments(data: pd.DataFrame) -> list:
+#     unique_df = data[['Department']].unique()
+#     print(unique_df)
+
+
 # the map_construction function is purely for generating a seattle map
 # to better introduce Seattle; gonna use this map for slides/presentation
 def map_construction(seattle_map: gpd.GeoDataFrame) -> None:
@@ -42,7 +47,7 @@ def main():
     filtered_df = filter_data(test_data)
     seattle_map = gpd.read_file(seattle_map_path)
     map_construction(seattle_map)
-
+    # unique_departments(filtered_df)
 
 
 if __name__ == "__main__":
